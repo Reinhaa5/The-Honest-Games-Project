@@ -1,21 +1,9 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Blog";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content="{Astro.generator}" />
-		<title>Astro</title>
-	</head>
-	<body>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-		<h1>About da blog</h1>
-		<h2>... and my new Astro site!</h2>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>... and my new Astro site!</h2>
 
 		<ul>
 			<li><a href="/posts/post-1/">Post 1</a></li>
@@ -32,5 +20,4 @@ import '../styles/global.css';
 			This site will update as I complete more of the tutorial, so keep checking
 			back and see how my journey is going!
 		</p>
-	</body>
-</html>
+</BaseLayout>
