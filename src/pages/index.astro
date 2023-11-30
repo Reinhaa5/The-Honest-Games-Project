@@ -1,7 +1,131 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "Home Page";
+import BaseLayout from '../layouts/BaseLayout.astro'
+const pageTitle = 'Decptive Patterns Calculator'
 ---
+
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+	<div class="rowContainer">
+		<h1>Deceptive Patterns Calculator</h1>
+		<p>
+			Join the movement for gaming transparency! The $75 billion
+			microtransaction industry isn't fading away, but neither is our power to
+			make a change. Learn, share, and speak out against deceptive patterns with
+			the Deceptive Patterns Calculator. Let's foster awareness and build a
+			community that keeps video games honest, together.
+		</p>
+	</div>
+	<div class="rowContainer">
+		<h2>How It Works</h2>
+		<p>
+			Answer 5 easy questions about your chosen video game, and let the
+			Deceptive Patterns Calculator go to work. It quickly examines your
+			responses, shedding light on the likelihood of deceptive patterns in your
+			game.
+		</p>
+	</div>
+	<form class="quizContainer">
+		<h2>5 Easy Questions</h2>
+
+		<h3>1.</h3>
+		<label for="gameTitle">Enter the video game title you want to test:</label>
+		<input type="text" id="gameTitle" name="gameTitle" />
+
+		<h3>2.</h3>
+		<p>Have you played or interacted with the game before?</p>
+		<label for="gameInteractionYes">Yes</label>
+		<input
+			type="radio"
+			id="gameInteractionYes"
+			name="gameInteraction"
+			value="Yes"
+		/>
+		<label for="gameInteractionNo">No</label>
+		<input
+			type="radio"
+			id="gameInteractionNo"
+			name="gameInteraction"
+			value="No"
+		/>
+
+		<h3>3.</h3>
+		<p>"Can you spend real-world money inside the game?"</p>
+		<label for="gameMoneyYes">Yes</label>
+		<input type="radio" id="gameMoneyYes" name="gameMoney" value="Yes" />
+		<label for="gameMoneyNo">No</label>
+		<input type="radio" id="gameMoneyNo" name="gameMoney" value="No" />
+
+		<h3>4.</h3>
+		<p>Select in-game store features</p>
+		<label for="gameStoreSales">Time-limited sales or discounts.</label>
+		<input type="checkbox" id="gameStoreSales" name="gameStore" value="" />
+		<label for="gameStoreChange">Catalog with changing items.</label>
+		<input type="checkbox" id="gameStoreChange" name="gameStore" value="" />
+		<label for="gameStoreMoney">Virtual currency purchasable with real money.</label>
+		<input type="checkbox" id="gameStoreMoney" name="gameStore" value="" />
+		<label for="gameStoreNone">None of the features.</label>
+		<input type="checkbox" id="gameStoreNone" name="gameStore" value="" />
+
+		<h3>5.</h3>
+		<p>
+			Does the game include time-based objectives to encourage routine play?
+		</p>
+		<label for="gameTimeYes">Yes</label>
+		<input type="radio" id="gameTimeYes" name="gameTime" value="Yes" />
+		<label for="gameTimeNo">No</label>
+		<input type="radio" id="gameTimeNo" name="gameTime" value="No" />
+
+		<button type="button">Calculate</button>
+	</form>
+
+	<div class="resultsContainer">
+		<div class="rowContainer">
+			<h2>Results</h2>
+			<p>
+				[Game Title] is [very likely or unlikely] to contain deceptive patterns.
+				Heres why:
+			</p>
+		</div>
+
+		<div class="rowContainer">
+			<h3>Microtransactions</h3>
+			<p>
+				While microtransactions themselves aren't inherently deceptive, they
+				often signal the potential for deceptive patterns. Video games without
+				microtransactions lack the profit motive to use these tactics.
+			</p>
+		</div>
+
+		<div class="rowContainer">
+			<h3>Time-Limited Sales or Discounts</h3>
+			<p>
+				In-game stores use limited-time sales to leverage FOMO, encouraging
+				purchases by creating a false sense of urgency.
+			</p>
+		</div>
+
+		<div class="rowContainer">
+			<h3>Catalog with Changing Items</h3>
+			<p>
+				A rotating storefront motivates users to buy due to the fear of missing
+				out, as items for sale change regularly with no indication on when it
+				will return for purchase.
+			</p>
+		</div>
+
+		<div class="rowContainer">
+			<h3>Virtual Currency Purchasable with Real Money</h3>
+			<p>
+				Virtual currency can obscure the real cost of items, making it
+				challenging for players to make informed purchasing decisions.
+			</p>
+		</div>
+
+		<div class="rowContainer">
+			<h3>Time-based objectives</h3>
+			<p>
+				Virtual currency can obscure the real cost of items, making it
+				challenging for players to make informed purchasing decisions.
+			</p>
+		</div>
+	</div>
 </BaseLayout>

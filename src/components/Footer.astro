@@ -1,15 +1,19 @@
 ---
-import Social from './Social.astro';
+import Social from './Social.astro'
+import FooterNav from './FooterNav.astro'
 ---
+
 <style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
+	footer {
+		display: flex;
+		gap: 1rem;
+		margin-top: 2rem;
+	}
 </style>
 <footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+	<span id="footerLogo">Honest Games</span>
+	<Social platform="twitter" username="astrodotbuild" />
+	<Social platform="github" username="withastro" />
+	<Social platform="youtube" username="astrodotbuild" />
+	<FooterNav />
 </footer>
