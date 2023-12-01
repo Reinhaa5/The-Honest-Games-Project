@@ -1,0 +1,5 @@
+<svg id="Checkmark" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <circle id="Ellipse_1" data-name="Ellipse 1" cx="12.5" cy="12.5" r="12.5" fill="#e4e4e4"/>
+  <circle id="Ellipse_2" data-name="Ellipse 2" cx="9.951" cy="9.951" r="9.951" transform="translate(2.549 2.549)" fill="#bb844d"/>
+  <path id="Path_6" data-name="Path 6" d="M312.45,246.292l-.068,0a1.4,1.4,0,0,1-1.037-.539l-1.955-2.513a1.4,1.4,0,0,1,.246-1.965l.07-.055a1.4,1.4,0,0,1,1.965.246,1.246,1.246,0,0,0,1.887.092l3.969-4.19a1.4,1.4,0,0,1,1.98-.053l.065.061a1.4,1.4,0,0,1,.053,1.98l-6.159,6.5A1.4,1.4,0,0,1,312.45,246.292Z" transform="translate(-301.322 -229.165)" fill="#fff"/>
+</svg>

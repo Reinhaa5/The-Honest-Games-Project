@@ -1,5 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { Image } from 'astro:assets';
+import quizMoney from "../assets/quizMoney.png"
+import quizNone from "../assets/quizNone.png"
+import quizSales from "../assets/quizSales.png"
+import quizStores from "../assets/quizStores.png"
+
+
 const pageTitle = 'Decptive Patterns Calculator'
 ---
 
@@ -25,56 +32,86 @@ const pageTitle = 'Decptive Patterns Calculator'
 	</div>
 	<form class="quizContainer">
 		<h2>5 Easy Questions</h2>
+		<div class="questionContainer textInput">
+			<label for="gameTitle">Enter the video game title you want to test:</label
+			>
+			<input type="text" id="gameTitle" name="gameTitle" />
+		</div>
+		<fieldset class="questionContainer trueFalse buttonFont">
+			<legend>Have you played or interacted with the game before?</legend>
+			<input
+				type="button"
+				id="gameInteractYes"
+				name="gameInteractYes"
+				value="Yes"
+			/>
+			<input
+				type="button"
+				id="gameInteractYes"
+				name="gameInteractNo"
+				value="No"
+			/>
+		</fieldset>
+		<fieldset class="questionContainer trueFalse buttonFont">
+			<legend>Can you spend real-world money inside the game?</legend>
+			<input
+				type="button"
+				id="gameIRLMoneyYes"
+				name="gameIRLMoneyYes"
+				value="Yes"
+			/>
+			<input
+				type="button"
+				id="gameIRLMoneyNo"
+				name="gameIRLMoneyNo"
+				value="No"
+			/>
+		</fieldset>
+		<fieldset class="questionContainer multipleChoice buttonFont">
+			<legend>Select in-game store features</legend>
+			<input
+				type="button"
+				id="gameStoreSales"
+				name="gameStoreSales"
+				value="Time-limited sales or discounts."
+			/>
+			<Image src={quizSales} alt="3 Premium shapes 80% off. Sale expires in 1 day and 8 hours." />
+			<input
+				type="button"
+				id="gameStoreChange"
+				name="gameStoreChange"
+				value="Catalog with changing items."
+			/>
+			<Image src={quizStores} alt="4 shapes for sale. Catalog refreshes in 6 days." />
+			<input
+				type="button"
+				id="gameStoreMoney"
+				name="gameStoreMoney"
+				value="Virtual currency purchasable with real money."
+			/>
+			<Image src={quizMoney} alt="bundles of premium currecny on sale at increasing prices." />
+			<input
+				type="button"
+				id="gameStoreNone"
+				name="gameStoreNone"
+				value="None of the features."
+			/>
+			<Image src={quizNone} alt="" />
+		</fieldset>
+		<fieldset class="questionContainer trueFalse buttonFont">
+			<legend>
+				Does the game include time-based objectives to encourage routine play?
+			</legend>
+			<input
+				type="button"
+				id="gameRoutineYes"
+				name="gameRoutineYes"
+				value="Yes"
+			/>
+			<input type="button" id="gameRoutineNo" name="gameRoutineNo" value="No" />
+		</fieldset>
 
-		<h3>1.</h3>
-		<label for="gameTitle">Enter the video game title you want to test:</label>
-		<input type="text" id="gameTitle" name="gameTitle" />
-
-		<h3>2.</h3>
-		<p>Have you played or interacted with the game before?</p>
-		<label for="gameInteractionYes">Yes</label>
-		<input
-			type="radio"
-			id="gameInteractionYes"
-			name="gameInteraction"
-			value="Yes"
-		/>
-		<label for="gameInteractionNo">No</label>
-		<input
-			type="radio"
-			id="gameInteractionNo"
-			name="gameInteraction"
-			value="No"
-		/>
-
-		<h3>3.</h3>
-		<p>"Can you spend real-world money inside the game?"</p>
-		<label for="gameMoneyYes">Yes</label>
-		<input type="radio" id="gameMoneyYes" name="gameMoney" value="Yes" />
-		<label for="gameMoneyNo">No</label>
-		<input type="radio" id="gameMoneyNo" name="gameMoney" value="No" />
-
-		<h3>4.</h3>
-		<p>Select in-game store features</p>
-		<label for="gameStoreSales">Time-limited sales or discounts.</label>
-		<input type="checkbox" id="gameStoreSales" name="gameStore" value="" />
-		<label for="gameStoreChange">Catalog with changing items.</label>
-		<input type="checkbox" id="gameStoreChange" name="gameStore" value="" />
-		<label for="gameStoreMoney">Virtual currency purchasable with real money.</label>
-		<input type="checkbox" id="gameStoreMoney" name="gameStore" value="" />
-		<label for="gameStoreNone">None of the features.</label>
-		<input type="checkbox" id="gameStoreNone" name="gameStore" value="" />
-
-		<h3>5.</h3>
-		<p>
-			Does the game include time-based objectives to encourage routine play?
-		</p>
-		<label for="gameTimeYes">Yes</label>
-		<input type="radio" id="gameTimeYes" name="gameTime" value="Yes" />
-		<label for="gameTimeNo">No</label>
-		<input type="radio" id="gameTimeNo" name="gameTime" value="No" />
-
-		<button type="button">Calculate</button>
+		<button type="button" id="calcButton">Calculate</button>
 	</form>
 
 	<div class="resultsContainer">
