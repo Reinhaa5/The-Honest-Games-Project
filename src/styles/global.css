@@ -38,27 +38,29 @@ fieldset {
 
 .nav-links {
 	margin: auto;
+	display: flex;
+	gap: 31px;
 }
 
 .nav-links a {
 	font: normal normal 600 20px/34px Inter;
-	margin-right: 31px;
 	color: #292939;
 	text-decoration: none;
 }
 
 #navLogo {
-	margin-right: 31px;
 	font: italic normal 800 31px/28px Saira;
 }
 
 .bodyWrapper {
 	max-width: 1600px;
-	margin: auto 1em;
+	padding: auto 5%;
+	margin: auto;
+	padding-bottom: 69px;
 }
 .rowContainer {
 	display: flex;
-	gap: 100px;
+	gap: 200px;
 	justify-content: center;
 	margin: auto auto 69px auto;
 }
@@ -77,13 +79,13 @@ fieldset {
 
 .quizContainer {
 	text-align: center;
-	margin: 31px auto 69px auto;
+	margin: 31px auto 100px auto;
 }
 
 .quizContainer legend,
 .quizContainer label {
 	font: normal normal 400 21px/31px Inter;
-	text-align: left;
+	text-align: center;
 	margin: 69px auto 22px auto;
 	width: 555px;
 }
@@ -109,6 +111,11 @@ fieldset {
 	padding: 10px 10px;
 }
 
+.questionContainer.textInput input[type='text'] {
+	font: normal normal 400 19px/19px Inter;
+	color: #292939;
+}
+
 .trueFalse input {
 	background: #f9f9f9 url(../icons/checkmarkFalse.svg) no-repeat padding-box;
 	background-position: 97% 50%;
@@ -119,11 +126,40 @@ fieldset {
 	text-align: left;
 	margin-bottom: 35px;
 	border-radius: 5px;
+	border: none;
+}
+
+.trueFalse input:hover{
+	box-shadow: 3px 5px 4px #fc7954;
+}
+
+.trueFalse .active{
+	background: #f9f9f9 url(../icons/checkmarkTrue.svg) no-repeat padding-box;
+	background-position: 97% 50%;
+	box-shadow: 3px 5px 4px #fc7954;
+}
+
+.multipleChoiceContainer {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.multipleChoice legend {
+	text-align: center;
+}
+
+.buttonWithImage {
+	max-width: 555px; /* Adjust width as needed */
+	margin-bottom: 20px; /* Adjust spacing between rows */
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
 .multipleChoice img {
+	height: auto;
 	max-width: 555px;
-	height: 100%;
 	margin-bottom: 24px;
 }
 
@@ -137,6 +173,11 @@ fieldset {
 	text-align: left;
 	margin-bottom: 12px;
 	border-radius: 5px;
+	min-width: 555px;
+}
+
+#gameRoutineNo {
+	margin-bottom: 100px;
 }
 
 #calcButton {

@@ -1,11 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import { Image } from 'astro:assets';
-import quizMoney from "../assets/quizMoney.png"
-import quizNone from "../assets/quizNone.png"
-import quizSales from "../assets/quizSales.png"
-import quizStores from "../assets/quizStores.png"
-
+import { Image } from 'astro:assets'
+import quizMoney from '../assets/quizMoney.png'
+import quizNone from '../assets/quizNone.png'
+import quizSales from '../assets/quizSales.png'
+import quizStores from '../assets/quizStores.png'
 
 const pageTitle = 'Decptive Patterns Calculator'
 ---
@@ -35,7 +34,12 @@ const pageTitle = 'Decptive Patterns Calculator'
 		<div class="questionContainer textInput">
 			<label for="gameTitle">Enter the video game title you want to test:</label
 			>
-			<input type="text" id="gameTitle" name="gameTitle" />
+			<input
+				type="text"
+				id="gameTitle"
+				name="gameTitle"
+				placeholder="Video Game Title"
+			/>
 		</div>
 		<fieldset class="questionContainer trueFalse buttonFont">
 			<legend>Have you played or interacted with the game before?</legend>
@@ -47,7 +51,7 @@ const pageTitle = 'Decptive Patterns Calculator'
 			/>
 			<input
 				type="button"
-				id="gameInteractYes"
+				id="gameInteractNo"
 				name="gameInteractNo"
 				value="No"
 			/>
@@ -69,35 +73,55 @@ const pageTitle = 'Decptive Patterns Calculator'
 		</fieldset>
 		<fieldset class="questionContainer multipleChoice buttonFont">
 			<legend>Select in-game store features</legend>
-			<input
-				type="button"
-				id="gameStoreSales"
-				name="gameStoreSales"
-				value="Time-limited sales or discounts."
-			/>
-			<Image src={quizSales} alt="3 Premium shapes 80% off. Sale expires in 1 day and 8 hours." />
-			<input
-				type="button"
-				id="gameStoreChange"
-				name="gameStoreChange"
-				value="Catalog with changing items."
-			/>
-			<Image src={quizStores} alt="4 shapes for sale. Catalog refreshes in 6 days." />
-			<input
-				type="button"
-				id="gameStoreMoney"
-				name="gameStoreMoney"
-				value="Virtual currency purchasable with real money."
-			/>
-			<Image src={quizMoney} alt="bundles of premium currecny on sale at increasing prices." />
-			<input
-				type="button"
-				id="gameStoreNone"
-				name="gameStoreNone"
-				value="None of the features."
-			/>
-			<Image src={quizNone} alt="" />
+			<div class="multipleChoiceContainer">
+				<div class="buttonWithImage">
+					<input
+						type="button"
+						id="gameStoreSales"
+						name="gameStoreSales"
+						value="Time-limited sales or discounts."
+					/>
+					<Image
+						src={quizSales}
+						alt="3 Premium shapes 80% off. Sale expires in 1 day and 8 hours."
+					/>
+				</div>
+				<div class="buttonWithImage">
+					<input
+						type="button"
+						id="gameStoreChange"
+						name="gameStoreChange"
+						value="Catalog with changing items."
+					/>
+					<Image
+						src={quizStores}
+						alt="4 shapes for sale. Catalog refreshes in 6 days."
+					/>
+				</div>
+				<div class="buttonWithImage">
+					<input
+						type="button"
+						id="gameStoreMoney"
+						name="gameStoreMoney"
+						value="Virtual currency purchasable with real money."
+					/>
+					<Image
+						src={quizMoney}
+						alt="bundles of premium currency on sale at increasing prices."
+					/>
+				</div>
+				<div class="buttonWithImage">
+					<input
+						type="button"
+						id="gameStoreNone"
+						name="gameStoreNone"
+						value="None of the features."
+					/>
+					<Image src={quizNone} alt="" />
+				</div>
+			</div>
 		</fieldset>
+
 		<fieldset class="questionContainer trueFalse buttonFont">
 			<legend>
 				Does the game include time-based objectives to encourage routine play?
@@ -165,4 +189,7 @@ const pageTitle = 'Decptive Patterns Calculator'
 			</p>
 		</div>
 	</div>
+	<script>
+		import '../scripts/quizCalc.js'
+	</script>
 </BaseLayout>
