@@ -45,12 +45,14 @@ const pageTitle = 'Decptive Patterns Calculator'
 			<legend>Have you played or interacted with the game before?</legend>
 			<input
 				type="button"
+				class="yesButton"
 				id="gameInteractYes"
 				name="gameInteractYes"
 				value="Yes"
 			/>
 			<input
 				type="button"
+				class="noButton"
 				id="gameInteractNo"
 				name="gameInteractNo"
 				value="No"
@@ -60,12 +62,14 @@ const pageTitle = 'Decptive Patterns Calculator'
 			<legend>Can you spend real-world money inside the game?</legend>
 			<input
 				type="button"
+				class="yesButton"
 				id="gameIRLMoneyYes"
 				name="gameIRLMoneyYes"
 				value="Yes"
 			/>
 			<input
 				type="button"
+				class="noButton"
 				id="gameIRLMoneyNo"
 				name="gameIRLMoneyNo"
 				value="No"
@@ -128,11 +132,17 @@ const pageTitle = 'Decptive Patterns Calculator'
 			</legend>
 			<input
 				type="button"
+				class="yesButton"
 				id="gameRoutineYes"
 				name="gameRoutineYes"
 				value="Yes"
 			/>
-			<input type="button" id="gameRoutineNo" name="gameRoutineNo" value="No" />
+			<input 
+				type="button" 
+				class="noButton"
+				id="gameRoutineNo" 
+				name="gameRoutineNo" 
+				value="No" />
 		</fieldset>
 
 		<button type="button" id="calcButton">Calculate</button>

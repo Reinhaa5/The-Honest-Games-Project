@@ -133,7 +133,7 @@ fieldset {
 	box-shadow: 3px 5px 4px #fc7954;
 }
 
-.trueFalse .active{
+.trueFalse .active, .multipleChoice .active input{
 	background: #f9f9f9 url(../icons/checkmarkTrue.svg) no-repeat padding-box;
 	background-position: 97% 50%;
 	box-shadow: 3px 5px 4px #fc7954;
