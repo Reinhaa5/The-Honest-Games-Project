@@ -21,8 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   buttonWithImageContainers.forEach(container => {
     container.addEventListener('click', function() {
-      const selectedValue = container.querySelector('input[type="button"]').value;
-	  console.log(container);
+    const selectedValue = container.querySelector('input[type="button"]').value;
+    const selectedID = container.querySelector('input[type="button"]').id;
+    console.log(selectedID);
 	  console.log(selectedValue);
 
 	  if (selectedValue !== 'None of the features') {
