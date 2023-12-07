@@ -20,6 +20,10 @@ header {
 	min-height: 75px;
 	margin-bottom: 96px;
 }
+
+nav {
+	padding: 0.5rem 0;
+}
 h1 {
 	font: normal normal 800 49px/80px Inter;
 }
@@ -36,11 +40,24 @@ fieldset {
 	border: none;
 }
 
+.hamburger,
+.dropdown {
+	display: none;
+}
+
 .nav-links {
 	margin: auto;
 	display: flex;
 	gap: 31px;
-	align-items: baseline;
+	align-items: center;
+	justify-content: center;
+}
+
+.nav-links img,
+.hamburger img {
+	max-width: 200px;
+	filter: invert(13%) sepia(17%) saturate(912%) hue-rotate(201deg)
+		brightness(96%) contrast(91%);
 }
 
 .nav-links a {
@@ -52,11 +69,6 @@ fieldset {
 
 .nav-links a:hover {
 	text-decoration: underline;
-}
-
-#navLogo {
-	font: italic normal 800 31px/28px Saira;
-	height: fit-content;
 }
 
 .bodyWrapper {
@@ -261,4 +273,89 @@ footer {
 .navColumn a:hover {
 	font-weight: 800;
 	text-decoration: underline;
+}
+
+/* Tablet View */
+@media only screen and (max-width: 1200px) {
+	.rowContainer {
+		flex-direction: column;
+		gap: 50px;
+	}
+
+	.rowContainer h1,
+	.rowContainer h2,
+	.rowContainer h3,
+	.rowContainer p {
+		margin: auto;
+		text-align: center;
+	}
+
+	.multipleChoiceContainer {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	nav {
+		width: 100%;
+		margin: 0.5rem auto;
+	}
+	.nav-links {
+		display: none;
+	}
+
+	.hamburger {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 0.5rem;
+	}
+
+	#spacer {
+		padding: 25px;
+	}
+	.center {
+		margin: 0 auto;
+	}
+
+	.dropdown {
+		display: none;
+	}
+
+	.dropdown.active {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.dropdown.active a {
+		font: normal normal 600 20px/34px Inter;
+		color: #292939;
+		text-decoration: none;
+		padding: 0.5rem;
+	}
+
+	.dropdown.active a:hover {
+		text-decoration: underline;
+	}
+
+	.hamburger svg {
+		max-width: 50px;
+	}
+
+	footer {
+		flex-direction: column;
+		height: auto;
+		gap: 2rem;
+	}
+	.logoSocial {
+		margin-top: 1rem;
+	}
+
+	.navColumn {
+		flex-direction: row;
+		justify-content: space-around;
+	}
 }
