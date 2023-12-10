@@ -81,6 +81,7 @@ const pageTitle = 'Decptive Patterns Calculator'
 				<div class="buttonWithImage">
 					<input
 						type="button"
+						class="choiceButton"
 						id="gameStoreSales"
 						name="gameStoreSales"
 						value="Time-limited sales or discounts."
@@ -93,6 +94,7 @@ const pageTitle = 'Decptive Patterns Calculator'
 				<div class="buttonWithImage">
 					<input
 						type="button"
+						class="choiceButton"
 						id="gameStoreChange"
 						name="gameStoreChange"
 						value="Catalog with changing items."
@@ -105,6 +107,7 @@ const pageTitle = 'Decptive Patterns Calculator'
 				<div class="buttonWithImage">
 					<input
 						type="button"
+						class="choiceButton"
 						id="gameStoreMoney"
 						name="gameStoreMoney"
 						value="Virtual currency purchasable with real money."
@@ -117,6 +120,7 @@ const pageTitle = 'Decptive Patterns Calculator'
 				<div class="buttonWithImage">
 					<input
 						type="button"
+						class="choiceButton"
 						id="gameStoreNone"
 						name="gameStoreNone"
 						value="None of the features."
@@ -137,36 +141,43 @@ const pageTitle = 'Decptive Patterns Calculator'
 				name="gameRoutineYes"
 				value="Yes"
 			/>
-			<input 
-				type="button" 
+			<input
+				type="button"
 				class="noButton"
-				id="gameRoutineNo" 
-				name="gameRoutineNo" 
-				value="No" />
+				id="gameRoutineNo"
+				name="gameRoutineNo"
+				value="No"
+			/>
 		</fieldset>
-
+		<p id="quizCalcError" class="displayNone">
+			Please answer every question before submitting.
+		</p>
 		<button type="button" id="calcButton">Calculate</button>
 	</form>
 
 	<div class="resultsContainer">
-		<div class="rowContainer">
+		<div class="rowContainer displayNone">
 			<h2>Results</h2>
-			<p>
+			<p id="gameTitleResults">
 				[Game Title] is [very likely or unlikely] to contain deceptive patterns.
 				Heres why:
 			</p>
 		</div>
 
-		<div class="rowContainer">
+		<div class="rowContainer displayNone">
 			<h3>Microtransactions</h3>
 			<p>
 				While microtransactions themselves aren't inherently deceptive, they
 				often signal the potential for deceptive patterns. Video games without
 				microtransactions lack the profit motive to use these tactics.
 			</p>
+			<!-- <p>
+				Result Reason: You answered that you can spend real-world money inside
+				the game.
+			</p> -->
 		</div>
 
-		<div class="rowContainer">
+		<div class="rowContainer displayNone">
 			<h3>Time-Limited Sales or Discounts</h3>
 			<p>
 				In-game stores use limited-time sales to leverage FOMO, encouraging
@@ -174,7 +185,7 @@ const pageTitle = 'Decptive Patterns Calculator'
 			</p>
 		</div>
 
-		<div class="rowContainer">
+		<div class="rowContainer displayNone">
 			<h3>Catalog with Changing Items</h3>
 			<p>
 				A rotating storefront motivates users to buy due to the fear of missing
@@ -183,7 +194,7 @@ const pageTitle = 'Decptive Patterns Calculator'
 			</p>
 		</div>
 
-		<div class="rowContainer">
+		<div class="rowContainer displayNone">
 			<h3>Virtual Currency Purchasable with Real Money</h3>
 			<p>
 				Virtual currency can obscure the real cost of items, making it
@@ -191,7 +202,7 @@ const pageTitle = 'Decptive Patterns Calculator'
 			</p>
 		</div>
 
-		<div class="rowContainer">
+		<div class="rowContainer displayNone">
 			<h3>Time-based objectives</h3>
 			<p>
 				Virtual currency can obscure the real cost of items, making it

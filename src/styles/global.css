@@ -73,7 +73,7 @@ fieldset {
 
 .bodyWrapper {
 	max-width: 1600px;
-	padding: auto 5%;
+	padding: 0 5%;
 	margin: auto;
 	padding-bottom: 69px;
 }
@@ -213,6 +213,10 @@ fieldset {
 #calcButton:hover {
 	box-shadow: 3px 5px 4px #00000066;
 	font-weight: 800;
+}
+
+.displayNone {
+	display: none;
 }
 
 footer {

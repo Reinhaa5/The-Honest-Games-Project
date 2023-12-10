@@ -1,26 +1,27 @@
 {
-  "semi": false,
-  "singleQuote": true,
-  "useTabs": true,
-  "trailingComma": "all",
-  "overrides": [
-    {
-      "files": "*.astro",
-      "options": {
-        "parser": "html"
-      }
-    },
-    {
-      "files": "*.js",
-      "options": {
-        "parser": "babel"
-      }
-    },
-    {
-      "files": "*.css",
-      "options": {
-        "parser": "css"
-      }
-    }
-  ]
+	"semi": false,
+	"singleQuote": true,
+	"useTabs": true,
+	"trailingComma": "all",
+	"overrides": [
+		{
+			"files": "*.astro",
+			"options": {
+				"parser": "html"
+			}
+		},
+		{
+			"files": "*.js",
+			"options": {
+				"parser": "babel",
+				"semi": true
+			}
+		},
+		{
+			"files": "*.css",
+			"options": {
+				"parser": "css"
+			}
+		}
+	]
 }
