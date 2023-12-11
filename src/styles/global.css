@@ -348,11 +348,17 @@ footer {
 	.hamburger svg {
 		max-width: 50px;
 	}
+	.rowContainer h1,
+	.rowContainer h2,
+	.rowContainer h3 {
+		width: auto;
+	}
 
 	footer {
 		flex-direction: column;
 		height: auto;
 		gap: 2rem;
+		padding-bottom: 1rem;
 	}
 	.logoSocial {
 		margin-top: 1rem;
@@ -361,5 +367,76 @@ footer {
 	.navColumn {
 		flex-direction: row;
 		justify-content: space-around;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.trueFalse input,
+	.quizContainer legend,
+	.quizContainer label {
+		width: auto;
+	}
+
+	.multipleChoice input,
+	.multipleChoice img,
+	#calcButton {
+		min-width: auto;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	header {
+		margin-bottom: 3rem;
+	}
+	.nav-links img,
+	.hamburger img {
+		width: 150px;
+	}
+
+	.rowContainer {
+		margin-bottom: 2rem;
+		gap: 1rem;
+	}
+	.rowContainer h1 {
+		font-size: 2rem;
+		line-height: 3rem;
+	}
+
+	h2 {
+		font-size: 1.8rem;
+		line-height: 3rem;
+	}
+
+	.rowContainer p {
+		font-size: 1.15rem;
+		line-height: 2.5rem;
+	}
+
+	.quizContainer legend,
+	.quizContainer label {
+		font-size: 1.15rem;
+		margin-top: 3rem;
+	}
+
+	.trueFalse input,
+	.questionContainer.textInput input[type='text'],
+	.multipleChoice input {
+		font-size: 1rem;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.hamburger svg {
+		max-width: 30px;
+	}
+	#spacer {
+		padding: 15px;
+	}
+	.buttonWithImage {
+		margin-bottom: 0;
+	}
+	.multipleChoice input,
+	.multipleChoice img {
+		max-width: 90%;
 	}
 }

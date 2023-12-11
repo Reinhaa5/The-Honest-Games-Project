@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const resultRows = resultsContainer.querySelectorAll('.rowContainer');
 	const gameTitleP = document.getElementById('gameTitleResults');
 	const quizCalcError = document.getElementById('quizCalcError');
+	let gameLikelyhood;
 
 	yesButtons.forEach((yesButton, index) => {
 		yesButton.addEventListener('click', function () {
@@ -94,16 +95,21 @@ document.addEventListener('DOMContentLoaded', function () {
 			quizCalcError.classList.add('displayNone');
 			// Shows the results header and body text.
 			gameTitleP.parentElement.classList.remove('displayNone');
+			if (selectedOptions[1] == 'Yes') {
+				resultRows[1].classList.remove('displayNone');
+				gameLikelyhood = 'Very likely';
+			} else {
+				resultRows[1].classList.add('displayNone');
+				gameLikelyhood = 'unlikely';
+			}
 			gameTitleP.innerHTML =
 				'Your game, ' +
 				gameTitle +
-				', is [very likely or unlikely] to contain deceptive patterns. Heres why:';
-			// checks if microtransactions are in games
-			if (selectedOptions[1] == 'Yes') {
-				resultRows[1].classList.remove('displayNone');
-			} else {
-				resultRows[1].classList.add('displayNone');
-			}
+				', is ' +
+				gameLikelyhood +
+				' to contain deceptive patterns. Heres why:';
+
+			// Show hides results based on asnwers.
 			if (selectedOptions[2] == 'Yes') {
 				resultRows[5].classList.remove('displayNone');
 			} else {
