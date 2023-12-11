@@ -87,7 +87,8 @@ fieldset {
 .rowContainer h1,
 .rowContainer h2,
 .rowContainer h3 {
-	width: 600px;
+	max-width: 600px;
+	width: 100%;
 	text-align: right;
 }
 
@@ -99,6 +100,7 @@ fieldset {
 .quizContainer {
 	text-align: center;
 	margin: 31px auto 100px auto;
+
 }
 
 .quizContainer legend,
@@ -106,7 +108,7 @@ fieldset {
 	font: normal normal 400 21px/31px Inter;
 	text-align: center;
 	margin: 69px auto 22px auto;
-	width: 555px;
+	width: 100%;
 }
 
 .questionContainer {
@@ -114,6 +116,7 @@ fieldset {
 	flex-direction: column;
 	max-width: 555px;
 	margin: auto;
+	width: 100%;
 }
 
 .buttonFont input {
@@ -124,7 +127,6 @@ fieldset {
 	background: #faf9f9;
 	border: 2px solid #707070;
 	height: 21.8px;
-	max-width: 555px;
 	text-align: left;
 	border-radius: 5px;
 	padding: 10px 10px;
@@ -161,8 +163,9 @@ fieldset {
 
 .multipleChoiceContainer {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(2, 500px);
 	gap: 20px;
+	justify-content: center;
 }
 
 .multipleChoice legend {
@@ -170,7 +173,6 @@ fieldset {
 }
 
 .buttonWithImage {
-	max-width: 555px; /* Adjust width as needed */
 	margin-bottom: 20px; /* Adjust spacing between rows */
 	flex-direction: column;
 	align-items: center;
@@ -179,7 +181,7 @@ fieldset {
 
 .multipleChoice img {
 	height: auto;
-	max-width: 555px;
+	max-width: 100%;
 	margin-bottom: 24px;
 }
 
@@ -189,11 +191,12 @@ fieldset {
 	box-shadow: 3px 5px 4px #00000066;
 	display: inline-block;
 	padding: 10px 10px;
-	height: 45px;
+	min-height: 45px;
 	text-align: left;
 	margin-bottom: 12px;
 	border-radius: 5px;
-	min-width: 555px;
+	min-width: 100%;
+	white-space: pre-wrap;
 }
 
 #gameRoutineNo {
@@ -376,8 +379,6 @@ footer {
 		width: auto;
 	}
 
-	.multipleChoice input,
-	.multipleChoice img,
 	#calcButton {
 		min-width: auto;
 		width: 100%;
@@ -432,11 +433,24 @@ footer {
 	#spacer {
 		padding: 15px;
 	}
-	.buttonWithImage {
-		margin-bottom: 0;
+
+	.multipleChoiceContainer {
+		grid-template-columns: 350px;
 	}
-	.multipleChoice input,
-	.multipleChoice img {
-		max-width: 90%;
+}
+
+@media only screen and (max-width: 375px) {
+	.multipleChoiceContainer {
+		grid-template-columns: 325px;
+	}
+}
+@media only screen and (max-width: 350px) {
+	.multipleChoiceContainer {
+		grid-template-columns: 18rem;
+	}
+}
+@media only screen and (max-width: 300px) {
+	.multipleChoiceContainer {
+		grid-template-columns: 15rem;
 	}
 }
