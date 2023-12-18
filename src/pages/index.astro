@@ -1,216 +1,102 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import { Image } from 'astro:assets'
-import quizMoney from '../assets/quizMoney.png'
-import quizNone from '../assets/quizNone.png'
-import quizSales from '../assets/quizSales.png'
-import quizStores from '../assets/quizStores.png'
-
-const pageTitle = 'Decptive Patterns Calculator'
+const pageTitle = 'The Honest Games Project'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<div class="rowContainer">
-		<h1>Deceptive Patterns Calculator</h1>
-		<p>
-			Join the movement for gaming transparency! The $75 billion
-			microtransaction industry isn't fading away, but neither is our power to
-			make a change. Learn, share, and speak out against deceptive patterns with
-			the Deceptive Patterns Calculator. Let's foster awareness and build a
-			community that keeps video games honest, together.
+	<div class="fullWidth heightLarge">
+		<h1>The Honest Games Project</h1>
+		<hr class="doubleLine" id="doubleLineTop" />
+		<hr class="doubleLine" id="doubleLineBottom" />
+		<p class="subHeading">
+			An educational resource for gamers and non-gamers alike to make informed
+			purchases on the games we love.
 		</p>
 	</div>
-	<div class="rowContainer">
-		<h2>How It Works</h2>
-		<p>
-			Answer 5 easy questions about your chosen video game, and let the
-			Deceptive Patterns Calculator go to work. It quickly examines your
-			responses, shedding light on the likelihood of deceptive patterns in your
-			game.
-		</p>
-	</div>
-	<form class="quizContainer">
-		<h2>5 Easy Questions</h2>
-		<div class="questionContainer textInput">
-			<label for="gameTitle">Enter the video game title you want to test:</label
-			>
-			<input
-				type="text"
-				id="gameTitle"
-				name="gameTitle"
-				placeholder="Video Game Title"
-			/>
+	<div class="rowContainerWithImage bodyWrapper">
+		<div class="rowContainerWithImageText">
+			<h2>Deceptive Patterns in Video Games</h2>
+			<p>
+				Deceptive patterns are design choices in websites, apps, and video games
+				used to intentionally manipulate users into taking actions they
+				otherwise would not, and they are everywhere in video games. From loot
+				boxes, to time-limited sales, deceptive patterns in video games actively
+				push users to spend more time and money in the game most commonly
+				through microtransactions.
+			</p>
 		</div>
-		<fieldset class="questionContainer trueFalse buttonFont">
-			<legend>Have you played or interacted with the game before?</legend>
-			<input
-				type="button"
-				class="yesButton"
-				id="gameInteractYes"
-				name="gameInteractYes"
-				value="Yes"
-			/>
-			<input
-				type="button"
-				class="noButton"
-				id="gameInteractNo"
-				name="gameInteractNo"
-				value="No"
-			/>
-		</fieldset>
-		<fieldset class="questionContainer trueFalse buttonFont">
-			<legend>Can you spend real-world money inside the game?</legend>
-			<input
-				type="button"
-				class="yesButton"
-				id="gameIRLMoneyYes"
-				name="gameIRLMoneyYes"
-				value="Yes"
-			/>
-			<input
-				type="button"
-				class="noButton"
-				id="gameIRLMoneyNo"
-				name="gameIRLMoneyNo"
-				value="No"
-			/>
-		</fieldset>
-		<fieldset class="questionContainer multipleChoice buttonFont">
-			<legend>Select in-game store features</legend>
-			<div class="multipleChoiceContainer">
-				<div class="buttonWithImage">
-					<input
-						type="button"
-						class="choiceButton"
-						id="gameStoreSales"
-						name="gameStoreSales"
-						value="Time-limited sales or discounts."
-					/>
-					<Image
-						src={quizSales}
-						alt="3 Premium shapes 80% off. Sale expires in 1 day and 8 hours."
-					/>
-				</div>
-				<div class="buttonWithImage">
-					<input
-						type="button"
-						class="choiceButton"
-						id="gameStoreChange"
-						name="gameStoreChange"
-						value="Catalog with changing items."
-					/>
-					<Image
-						src={quizStores}
-						alt="4 shapes for sale. Catalog refreshes in 6 days."
-					/>
-				</div>
-				<div class="buttonWithImage">
-					<input
-						type="button"
-						class="choiceButton"
-						id="gameStoreMoney"
-						name="gameStoreMoney"
-						value="Virtual currency purchasable with real money."
-					/>
-					<Image
-						src={quizMoney}
-						alt="bundles of premium currency on sale at increasing prices."
-					/>
-				</div>
-				<div class="buttonWithImage">
-					<input
-						type="button"
-						class="choiceButton"
-						id="gameStoreNone"
-						name="gameStoreNone"
-						value="None of the features."
-					/>
-					<Image src={quizNone} alt="" />
-				</div>
+		<img src="https://placehold.co/600x400" />
+	</div>
+	<div class="threeUp fullWidth">
+		<h2>Why does it matter?</h2>
+		<div class="threeUpItemContainer">
+			<div class="threeUpItem">
+				<h3>Deceptive patterns hurt.</h3>
+				<p>
+					Many gamers are unaware of the predatory designs causing them to spend
+					hundreds, if not thousands of dollars on in-game purchases.
+				</p>
 			</div>
-		</fieldset>
-
-		<fieldset class="questionContainer trueFalse buttonFont">
-			<legend>
-				Does the game include time-based objectives to encourage routine play?
-			</legend>
-			<input
-				type="button"
-				class="yesButton"
-				id="gameRoutineYes"
-				name="gameRoutineYes"
-				value="Yes"
-			/>
-			<input
-				type="button"
-				class="noButton"
-				id="gameRoutineNo"
-				name="gameRoutineNo"
-				value="No"
-			/>
-		</fieldset>
-		<p id="quizCalcError" class="displayNone">
-			Please answer every question before submitting.
-		</p>
-		<button type="button" id="calcButton">Calculate</button>
-	</form>
-
-	<div class="resultsContainer">
-		<div class="rowContainer displayNone">
-			<h2>Results</h2>
-			<p id="gameTitleResults">
-				[Game Title] is [very likely or unlikely] to contain deceptive patterns.
-				Heres why:
-			</p>
-		</div>
-
-		<div class="rowContainer displayNone">
-			<h3>Microtransactions</h3>
-			<p>
-				While microtransactions themselves aren't inherently deceptive, they
-				often signal the potential for deceptive patterns. Video games without
-				microtransactions lack the profit motive to use these tactics.
-			</p>
-			<!-- <p>
-				Result Reason: You answered that you can spend real-world money inside
-				the game.
-			</p> -->
-		</div>
-
-		<div class="rowContainer displayNone">
-			<h3>Time-Limited Sales or Discounts</h3>
-			<p>
-				In-game stores use limited-time sales to leverage FOMO, encouraging
-				purchases by creating a false sense of urgency.
-			</p>
-		</div>
-
-		<div class="rowContainer displayNone">
-			<h3>Catalog with Changing Items</h3>
-			<p>
-				A rotating storefront motivates users to buy due to the fear of missing
-				out, as items for sale change regularly with no indication on when it
-				will return for purchase.
-			</p>
-		</div>
-
-		<div class="rowContainer displayNone">
-			<h3>Virtual Currency Purchasable with Real Money</h3>
-			<p>
-				Virtual currency can obscure the real cost of items, making it
-				challenging for players to make informed purchasing decisions.
-			</p>
-		</div>
-
-		<div class="rowContainer displayNone">
-			<h3>Time-based objectives</h3>
-			<p>
-				Virtual currency can obscure the real cost of items, making it
-				challenging for players to make informed purchasing decisions.
-			</p>
+			<div class="threeUpItem">
+				<h3>No age restrictions.</h3>
+				<p>
+					Games can contain loot boxes that are “psychologically akin to
+					gambling” and prime its users to form unhealthy gaming habits yet kids
+					can easily access them.
+				</p>
+			</div>
+			<div class="threeUpItem">
+				<h3>Unaware Consumers.</h3>
+				<p>
+					Deceptive pattern obfuscate the true price of in-game purchases,
+					making it extremely difficult to make an informed purchase decision.
+				</p>
+			</div>
 		</div>
 	</div>
-	<script>
-		import '../scripts/quizCalc.js'
-	</script>
+	<div class="bodyWrapper">
+		<div class="rowContainerWithImage">
+			<img src="https://placehold.co/600x400" />
+			<div class="rowContainerWithImageText">
+				<h2>Glossary of Deceptive Designs</h2>
+				<p>
+					There are over X known deceptive patterns in video games. These
+					designs all push users to spend more time and money. The Glossary
+					provide names, descriptions, and real world examples from some of the
+					most popular titles like Call of Duty and League of Legends.
+				</p>
+			</div>
+		</div>
+		<div class="rowContainerWithImage">
+			<div class="rowContainerWithImageText">
+				<h2>Counter Deceptive Patterns</h2>
+				<p>
+					Arm yourself with the knowledge you need to defend against the subtle
+					influences of these deceptive designs. Find common and helpful
+					strategies aiming to reduce or prevent time and money spent on video
+					games.
+				</p>
+			</div>
+			<img src="https://placehold.co/600x400" />
+		</div>
+		<div class="rowContainerWithImage">
+			<img src="https://placehold.co/600x400" />
+			<div class="rowContainerWithImageText">
+				<h2>About the Project</h2>
+				<p>
+					Originally started as an undergraduate senior thesis project, the
+					Honest Games Project is designed to expose deceptive designs in
+					interactive media. It is part of a long term mission to become a
+					consumer advocate for video game players of all ages. Alex, the sole
+					developer of the project, has a bachelors degree in English and
+					Interactive Multimedia and loves all forms of digital media, with
+					expertise in web design, writing and video editing.
+				</p>
+				<p>
+					The project is under active development and is open to feedback. View
+					the roadmap.
+				</p>
+			</div>
+		</div>
+	</div>
 </BaseLayout>

@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
+import quizMoney from '../assets/quizMoney.png'
+import quizNone from '../assets/quizNone.png'
+import quizSales from '../assets/quizSales.png'
+import quizStores from '../assets/quizStores.png'
+
+const pageTitle = 'Decptive Patterns Calculator'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<div class="bodyWrapper topMarginLarge">
+		<div class="rowContainer">
+			<h1>Deceptive Patterns Calculator</h1>
+			<p>
+				Join the movement for gaming transparency! The $75 billion
+				microtransaction industry isn't fading away, but neither is our power to
+				make a change. Learn, share, and speak out against deceptive patterns
+				with the Deceptive Patterns Calculator. Let's foster awareness and build
+				a community that keeps video games honest, together.
+			</p>
+		</div>
+		<div class="rowContainer">
+			<h2>How It Works</h2>
+			<p>
+				Answer 5 easy questions about your chosen video game, and let the
+				Deceptive Patterns Calculator go to work. It quickly examines your
+				responses, shedding light on the likelihood of deceptive patterns in
+				your game.
+			</p>
+		</div>
+		<form class="quizContainer">
+			<h2>5 Easy Questions</h2>
+			<div class="questionContainer textInput">
+				<label for="gameTitle"
+					>Enter the video game title you want to test:</label
+				>
+				<input
+					type="text"
+					id="gameTitle"
+					name="gameTitle"
+					placeholder="Video Game Title"
+				/>
+			</div>
+			<fieldset class="questionContainer trueFalse buttonFont">
+				<legend>Have you played or interacted with the game before?</legend>
+				<input
+					type="button"
+					class="yesButton"
+					id="gameInteractYes"
+					name="gameInteractYes"
+					value="Yes"
+				/>
+				<input
+					type="button"
+					class="noButton"
+					id="gameInteractNo"
+					name="gameInteractNo"
+					value="No"
+				/>
+			</fieldset>
+			<fieldset class="questionContainer trueFalse buttonFont">
+				<legend>Can you spend real-world money inside the game?</legend>
+				<input
+					type="button"
+					class="yesButton"
+					id="gameIRLMoneyYes"
+					name="gameIRLMoneyYes"
+					value="Yes"
+				/>
+				<input
+					type="button"
+					class="noButton"
+					id="gameIRLMoneyNo"
+					name="gameIRLMoneyNo"
+					value="No"
+				/>
+			</fieldset>
+			<fieldset class="questionContainer multipleChoice buttonFont">
+				<legend>Select in-game store features</legend>
+				<div class="multipleChoiceContainer">
+					<div class="buttonWithImage">
+						<input
+							type="button"
+							class="choiceButton"
+							id="gameStoreSales"
+							name="gameStoreSales"
+							value="Time-limited sales or discounts."
+						/>
+						<Image
+							src={quizSales}
+							alt="3 Premium shapes 80% off. Sale expires in 1 day and 8 hours."
+						/>
+					</div>
+					<div class="buttonWithImage">
+						<input
+							type="button"
+							class="choiceButton"
+							id="gameStoreChange"
+							name="gameStoreChange"
+							value="Catalog with changing items."
+						/>
+						<Image
+							src={quizStores}
+							alt="4 shapes for sale. Catalog refreshes in 6 days."
+						/>
+					</div>
+					<div class="buttonWithImage">
+						<input
+							type="button"
+							class="choiceButton"
+							id="gameStoreMoney"
+							name="gameStoreMoney"
+							value="Virtual currency purchasable with real money."
+						/>
+						<Image
+							src={quizMoney}
+							alt="bundles of premium currency on sale at increasing prices."
+						/>
+					</div>
+					<div class="buttonWithImage">
+						<input
+							type="button"
+							class="choiceButton"
+							id="gameStoreNone"
+							name="gameStoreNone"
+							value="None of the features."
+						/>
+						<Image src={quizNone} alt="" />
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset class="questionContainer trueFalse buttonFont">
+				<legend>
+					Does the game include time-based objectives to encourage routine play?
+				</legend>
+				<input
+					type="button"
+					class="yesButton"
+					id="gameRoutineYes"
+					name="gameRoutineYes"
+					value="Yes"
+				/>
+				<input
+					type="button"
+					class="noButton"
+					id="gameRoutineNo"
+					name="gameRoutineNo"
+					value="No"
+				/>
+			</fieldset>
+			<p id="quizCalcError" class="displayNone">
+				Please answer every question before submitting.
+			</p>
+			<button type="button" id="calcButton">Calculate</button>
+		</form>
+
+		<div class="resultsContainer">
+			<div class="rowContainer displayNone">
+				<h2>Results</h2>
+				<p id="gameTitleResults">
+					[Game Title] is [very likely or unlikely] to contain deceptive
+					patterns. Heres why:
+				</p>
+			</div>
+
+			<div class="rowContainer displayNone">
+				<h3>Microtransactions</h3>
+				<p>
+					While microtransactions themselves aren't inherently deceptive, they
+					often signal the potential for deceptive patterns. Video games without
+					microtransactions lack the profit motive to use these tactics.
+				</p>
+				<!-- <p>
+				Result Reason: You answered that you can spend real-world money inside
+				the game.
+			</p> -->
+			</div>
+
+			<div class="rowContainer displayNone">
+				<h3>No Microtransactions</h3>
+				<p>
+					Your game is unlikely to have deceptive patterns because there are no
+					microtransactions. Without the profit motivation, there is little
+					reason to intentionally implement deceptive patterns into the game.
+				</p>
+			</div>
+
+			<div class="rowContainer displayNone">
+				<h3>Time-Limited Sales or Discounts</h3>
+				<p>
+					In-game stores use limited-time sales to leverage FOMO, encouraging
+					purchases by creating a false sense of urgency.
+				</p>
+			</div>
+
+			<div class="rowContainer displayNone">
+				<h3>Catalog with Changing Items</h3>
+				<p>
+					A rotating storefront motivates users to buy due to the fear of
+					missing out, as items for sale change regularly with no indication on
+					when it will return for purchase.
+				</p>
+			</div>
+
+			<div class="rowContainer displayNone">
+				<h3>Virtual Currency Purchasable with Real Money</h3>
+				<p>
+					Virtual currency can obscure the real cost of items, making it
+					challenging for players to make informed purchasing decisions.
+				</p>
+			</div>
+
+			<div class="rowContainer displayNone">
+				<h3>Time-based objectives</h3>
+				<p>
+					Virtual currency can obscure the real cost of items, making it
+					challenging for players to make informed purchasing decisions.
+				</p>
+			</div>
+			<div class="rowContainer displayNone">
+				<h3>Next Steps (Very likely result)</h3>
+				<p>
+					Ready to combat deceptive patterns? There are many strategies we can
+					use to help recognize and reduce the amount of time and money spent on
+					these games. Here is a preview of three actionable strategies to help
+					reduce spending on video games:
+				</p>
+				<ul>
+					<li>
+						Create a budget and keep a log of how much money you spend in the
+						game.
+					</li><li>
+						Disconnect any automatic purchasing or one-tap payments and give
+						yourself a 5-minute delay before purchasing.
+					</li><li>
+						Evaluate your motivations for purchasing. Are you buying things
+						because you feel upset or feel like you're missing out?
+					</li>
+				</ul><p>
+					To learn even more strategies and see why they help fight against
+					deceptive patterns visit our Self-Help Tools page.
+				</p>
+			</div>
+		</div>
+		<div class="rowContainer displayNone">
+			<h3>Next Steps (not likely result)</h3>
+			<p>
+				Our quiz only looks for 4 of the X amount of deceptive patterns in video
+				games. Learn what to look out for using the Deceptive Pattern Glossary
+				and prepare yourself with strategies on how to counter them. Here is a
+				preview of actionable strategies to help reduce spending on video games:
+			</p>
+			<ul>
+				<li>
+					Create a budget and keep a log of how much money you spend in the
+					game.
+				</li><li>
+					Disconnect any automatic purchasing or one-tap payments and give
+					yourself a 5-minute delay before purchasing.
+				</li><li>
+					Evaluate your motivations for purchasing. Are you buying things
+					because you feel upset or feel like you're missing out?
+				</li>
+			</ul>
+			<p>
+				Learn even more strategies and see why they help fight against deceptive
+				patterns: Link Learn about strategies to counter deceptive patterns or
+				even expand your knowledge with our deceptive pattern glossary.
+			</p>
+		</div>
+	</div>
+</BaseLayout>
+
+<script>
+	import '../scripts/quizCalc.js'
+</script>
