@@ -295,6 +295,30 @@ fieldset {
 	display: none;
 }
 
+.nextSteps{
+	flex-direction: column;
+	padding: 7rem;
+	background-color: #eeeeee;
+}
+
+.nextSteps h3{
+	max-width: 100%;
+	text-align: left;
+	margin-bottom: 2rem;
+}
+
+.nextSteps p{
+	max-width: 100%;
+}
+
+.nextSteps ul{
+	margin: 2rem 0;
+	padding-left: 3rem;
+}
+.nextSteps li{
+	font: normal normal 400 24px/43px Inter;
+}
+
 footer {
 	display: flex;
 	width: 100%;

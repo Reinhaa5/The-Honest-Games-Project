@@ -79,6 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		let trueFalseCheck = selectedOptions.includes(undefined); //check if all buttons for true false questions are selected
 		console.log(trueFalseCheck);
 
+		console.log(resultRows);
+
 		// check if multiselect list is empty for conditional results
 		let multiChoiceListCheck = undefined;
 		if (multiChoiceList.length > 0) {
@@ -96,11 +98,19 @@ document.addEventListener('DOMContentLoaded', function () {
 			// Shows the results header and body text.
 			gameTitleP.parentElement.classList.remove('displayNone');
 			if (selectedOptions[1] == 'Yes') {
-				resultRows[1].classList.remove('displayNone');
-				gameLikelyhood = 'Very likely';
+				resultRows[1].classList.remove('displayNone'); //Microtransactions
+				resultRows[7].classList.remove('displayNone'); // Next Steps
+				gameLikelyhood = 'very likely';
+				resultRows[2].classList.add('displayNone'); //No Microtrsnactions
+				resultRows[8].classList.add('displayNone'); // Next Steps Unlikely
+
+
 			} else {
-				resultRows[1].classList.add('displayNone');
+				resultRows[2].classList.remove('displayNone'); //No Microtransactions
+				resultRows[8].classList.remove('displayNone'); //Next Steps Unlikely
 				gameLikelyhood = 'unlikely';
+				resultRows[1].classList.add('displayNone'); //Microtrsnactions
+				resultRows[7].classList.add('displayNone'); // Next Steps Likely
 			}
 			gameTitleP.innerHTML =
 				'Your game, ' +
@@ -110,26 +120,29 @@ document.addEventListener('DOMContentLoaded', function () {
 				' to contain deceptive patterns. Heres why:';
 
 			// Show hides results based on asnwers.
+			// Time Based Objectives
 			if (selectedOptions[2] == 'Yes') {
-				resultRows[5].classList.remove('displayNone');
+				resultRows[6].classList.remove('displayNone');
 			} else {
-				resultRows[5].classList.add('displayNone');
+				resultRows[6].classList.add('displayNone');
 			}
-
+			//In game store sales
 			if (multiChoiceList.includes('gameStoreSales')) {
-				resultRows[2].classList.remove('displayNone');
-			} else {
-				resultRows[2].classList.add('displayNone');
-			}
-			if (multiChoiceList.includes('gameStoreChange')) {
 				resultRows[3].classList.remove('displayNone');
 			} else {
 				resultRows[3].classList.add('displayNone');
 			}
-			if (multiChoiceList.includes('gameStoreMoney')) {
+			//In game store rotating storefront
+			if (multiChoiceList.includes('gameStoreChange')) {
 				resultRows[4].classList.remove('displayNone');
 			} else {
 				resultRows[4].classList.add('displayNone');
+			} 
+			//in game store virutal currency
+			if (multiChoiceList.includes('gameStoreMoney')) {
+				resultRows[5].classList.remove('displayNone');
+			} else {
+				resultRows[5].classList.add('displayNone');
 			}
 		} else {
 			quizCalcError.classList.remove('displayNone');
