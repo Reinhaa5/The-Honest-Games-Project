@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Honest Games</title>
+		<!-- <link rel="stylesheet" href="style.css"> -->
+
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans:ital,wght@0,600;0,700;1,400&display=swap');
+
+			/* Clean Start */
+			html,
+			body,
+			div,
+			span,
+			applet,
+			object,
+			iframe,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			blockquote,
+			pre,
+			a,
+			abbr,
+			acronym,
+			address,
+			big,
+			cite,
+			code,
+			del,
+			dfn,
+			em,
+			img,
+			ins,
+			kbd,
+			q,
+			s,
+			samp,
+			small,
+			strike,
+			strong,
+			sub,
+			sup,
+			tt,
+			var,
+			b,
+			u,
+			i,
+			center,
+			dl,
+			dt,
+			dd,
+			ol,
+			ul,
+			li,
+			fieldset,
+			form,
+			label,
+			legend,
+			table,
+			caption,
+			tbody,
+			tfoot,
+			thead,
+			tr,
+			th,
+			td,
+			article,
+			aside,
+			canvas,
+			details,
+			embed,
+			figure,
+			figcaption,
+			footer,
+			header,
+			hgroup,
+			menu,
+			nav,
+			output,
+			ruby,
+			section,
+			summary,
+			time,
+			mark,
+			audio,
+			video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+
+			/* Styling */
+
+			body {
+				font-family: 'Open Sans', sans-serif;
+			}
+
+			nav {
+				display: inline-flex;
+				align-items: center;
+				gap: 25px;
+				width: 100%;
+				justify-content: center;
+				min-height: 50px;
+
+				background-color: #efefef;
+				color: #cc2500;
+
+				position: fixed;
+			}
+
+			nav a {
+				text-decoration: none;
+				color: #cc2500;
+			}
+
+			#search {
+				width: 200px;
+				border: 2px solid #3a3c48;
+				text-indent: 5px;
+				border-radius: 5px;
+			}
+
+			#login {
+				width: 100px;
+				background-color: #cc2500;
+				color: #efefef;
+				text-align: center;
+				border: 2px solid #3a3c48;
+				border-radius: 5px;
+			}
+
+			.blackWrap {
+				display: flex;
+				justify-content: center;
+				background-color: #252525;
+				color: #efefef;
+				width: 100%;
+				min-height: 100vh;
+			}
+
+			.mainContainer {
+				max-width: 900px;
+			}
+
+			#mainTitle {
+				font-size: 64px;
+				margin: 50px;
+				text-align: center;
+				margin-top: 75px;
+			}
+
+			.gameCard {
+				display: flex;
+				flex-wrap: wrap;
+				background-color: #3a3c48;
+				align-items: center;
+				justify-content: center;
+				border-radius: 5px;
+				gap: 40px;
+			}
+
+			.gameCard img {
+				max-width: 500px;
+				height: auto;
+				margin: 20px;
+				margin-left: 5px;
+			}
+
+			.gameCard h1 {
+				font-size: 96px;
+				font-weight: 800;
+				color: #cc2500;
+			}
+
+			.gameTextContainer {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				max-width: 300px;
+				margin: 20px;
+			}
+
+			.gameScoreContainer h2 {
+				text-align: center;
+				font-size: 24px;
+			}
+
+			.gameDetailsContainer {
+				margin-top: 2em;
+				font-size: 24px;
+				text-align: center;
+			}
+
+			.gameDetailsContainer h2 {
+				margin-top: 1em;
+			}
+
+			section {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				margin-top: 50px;
+			}
+
+			section h2 {
+				font-size: 48px;
+				text-align: center;
+			}
+
+			.visualSummaryContainer {
+				display: flex;
+				justify-content: center;
+				min-height: 300px;
+			}
+
+			.VisualSummaryIndv {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				min-width: 300px;
+				text-align: center;
+			}
+
+			.VisualSummaryIndv img {
+				max-width: 150px;
+				margin: 0 auto;
+				/* filter: invert(.5) */
+			}
+
+			.VisualSummaryIndv h3 {
+				color: #43a2e6;
+				font-size: 28px;
+				margin: 15px auto;
+			}
+
+			section h4 {
+				font-size: 24px;
+				font-weight: 600;
+				text-align: center;
+			}
+
+			hr {
+				margin-top: 50px;
+				border-top: 5px solid;
+			}
+
+			article {
+				margin-top: 50px;
+			}
+
+			article h2 {
+				font-size: 24px;
+				margin-top: 25px;
+			}
+
+			article img {
+				margin-top: 10px;
+				max-width: 100%;
+			}
+
+			article p {
+				margin-top: 25px;
+				font-size: 18px;
+				font-weight: 400;
+				text-indent: 50px;
+				line-height: 30px;
+			}
+
+			article p:last-child {
+				margin-bottom: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<img src="" />
+			<a href=""><h6>Home</h6></a>
+			<a href=""><h6>Database</h6></a>
+			<a href=""><h6>Reviews</h6></a>
+			<div id="search">
+				<h6>Search</h6>
+			</div>
+			<div id="login">
+				<h6>Login</h6>
+			</div>
+		</nav>
+		<div class="blackWrap">
+			<div class="mainContainer">
+				<h1 id="mainTitle">Overwatch 2</h1>
+
+				<div class="gameCard" id="app">
+					<img src="public/images/OW/ow2cover.webp" />
+					<div class="gameTextContainer">
+						<div class="gameScoreContainer">
+							<h1>4/10</h1>
+							<h2>Heavily Monetized</h2>
+						</div>
+						<div class="gameDetailsContainer">
+							<h2>Release Date: Oct 4, 2022</h2>
+							<h2>Price: Free-to-play</h2>
+							<h2>ESRB Rating: Teen</h2>
+						</div>
+					</div>
+				</div>
+
+				<section class="Summary">
+					<h2>Summary</h2>
+					<div class="visualSummaryContainer">
+						<div class="VisualSummaryIndv">
+							<img src="public/images/OW/ticket-svgrepo-com.svg" />
+							<h3>Contains Battle Pass</h3>
+						</div>
+						<div class="VisualSummaryIndv">
+							<img src="public/images/OW/price-tag-svgrepo-com (1).svg" />
+							<h3>Deceptive Pricing</h3>
+						</div>
+						<div class="VisualSummaryIndv">
+							<img src="public/images/OW/7Artboard 1@4x.png" />
+							<h3>No Loot Boxes</h3>
+						</div>
+					</div>
+					<h4>
+						Overwatch 2 fails to provide all the information needed for
+						consumers to make informed decisions on its in-game purchases. In
+						addition, it incorporates deceptive designs to purposely obfuscate
+						the value of its items and pushes users to spend more money using
+						behavioral game design in its store front and battle pass system.
+					</h4>
+				</section>
+				<hr />
+				<article>
+					<p>
+						As a long-term player of Overwatch 1 and someone fully aware of
+						Activision-Blizzard's heavy monetization of past games with World of
+						Warcraft and Call of Duty, when they announced Overwatch 2 is going
+						to be free-to-play, I and many others had concerns. While Overwatch
+						1 had the infamous loot boxes, it constantly rewarded the player
+						with plenty of cosmetic items and out-of-game progression. However,
+						with the on release price tag of $39.99 USD sliding down to zero for
+						its sequel, it was difficult to become excited for a long-awaited
+						sequel for fear of what it could turn into, especially after the
+						slew of articles about issues in game development and leadership.
+						Surprisingly, before the game was released Activision-Blizzard
+						announced that no boxes would be found in Overwatch 2, a great move
+						since loot boxes have been deemed psychologically similar to
+						gambling, however Overwatch 2 monetization scheme incorporates even
+						more deceptive designs made to push users to spend money, with some
+						of them, like intermediate reinforcement, having the same addictive
+						qualities as loot boxes. On release, players learned that there were
+						even less rewards and out-of-game progression from playing the game
+						as well. The change in business model from Overwatch 1 to Overwatch
+						2 led to an increase of monetization where cosmetics are almost
+						exclusively locked behind paywall content. Its new battle pass
+						system and storefront obfuscate the cost of the products using
+						deceptive designs such as virtual currencies and incorporates
+						physiological motivations like fear of missing out to push users
+						into spending more money. These intentional choices in the game
+						designs whittle away at consumers right and fail to value the
+						players time and money.
+					</p>
+
+					<h2>Battle Pass Breakdown</h2>
+
+					<p>
+						One of Overwatch 2’s main monetization systems is through the battle
+						pass. Within the battle pass there are a total of eighty-four items
+						to unlock, including the new hero Rammatra for season 2. Of these
+						eighty-four items, only 26% of them can be unlocked for free. The
+						rest can only be gained after purchasing the premium battle pass. In
+						this graph you can see the breakdown of the unlockables of the free
+						version compared to the paid version. The hero can only be unlocked
+						once and is available for free and paid, but it takes longer to
+						unlock it for free.
+					</p>
+
+					<img src="public/images/OW/ow2ItemCatalog.png" />
+
+					<p>
+						The percentage difference is comparing how much paid against how
+						much is free. For example, the first row focuses on skins. There are
+						two skins for free and 7 paid. That means there are 350% (or 3.5x)
+						more skins that you can only unlock through paying when compared to
+						the free route. This by itself is not a problem, but anyone who
+						spends their money should know fully well what they are paying for.
+						Skins are the most valuable cosmetic for players as they are the
+						most visible asset to a player and are sold for the highest amount
+						in the store front (typically around $20). When compared to the free
+						twenty, there are 281% more paid items at 55. If all of these paid
+						items are distributed equally that means the percentage ratio of
+						every item should hover around 281%, rounding up to 300%. That means
+						for every 1 free item, there should be 3 of that paid items. These
+						are the items that follow or are below the 1:3 ratio: Name cards,
+						souvenirs, highlight intros, emotes, players icons. Items that are
+						above it: Skins, sprays, voice lines, victory poses, and weapon
+						charms. All of this information was gathered in-game battle pass and
+						cataloged on an Excel sheet. If you want to view the full catalog
+						<a href>click here.</a>
+					</p>
+					<p>
+						The battle pass is made up of eighty different tiers containing
+						eighty-four items with each tier requiring an even 10,000 XP to
+						complete it. To get experience points, players can do daily, weekly
+						seasonal or event quests which are achieved from playing the game.
+						The player also gets XP just from playing regular matches, winning
+						games and their performance within the game. Players have the option
+						of completing a tier by spending $200 Overwatch points which equates
+						to about $2. To unlock all 80 tiers this way it will run players a
+						total of $158 ( 2 x 79 as the 1st tier is automatic.). The total
+						price of buying out a battle pass is not clearly available to the
+						user.
+					</p>
+					<p>
+						To complete the battle pass without paying money, players will need
+						to amass a total of 79,000 XP from playing the game or doing the
+						challenges. Challenges will represent a majority of the way players
+						earn XP, as without it if players won 50% of their games it would
+						take over 1000 games to complete it roughly equating to 110 hours
+						spent in a match. With the challenges the battle pass is a lot less
+						grindy.
+					</p>
+
+					<img src="public/images/OW/ow2bpxp.png" />
+					<p>
+						This graph shows all of the XP gained based on the percent of
+						challenges completed, including the time limits involved with them.
+						Completing 50% of all the challenges means you have completed 90
+						daily challenges, 44 weekly challenges, 6 seasonal challenges, and
+						10 event challenges totaling to 52k XP with 66% of the battle pass
+						complete. This does not include all the game XP you would retain
+						from playing the game to do said challenges.
+					</p>
+
+					<h2>Battle Pass Opinion</h2>
+					<p>
+						The business model change from pay to play to free to play has
+						forced heavier monetization styles within the game and it is
+						reflected clearly in the battle pass. It fits within the trend of "
+						games as service" seen across the AAA industry where content is drip
+						fed overtime to keep players engaged and find different forms of
+						revenue. The battle pass is that reoccurring purchasing habit that
+						Overwatch two hopes to encourage. This is made apparent through the
+						promotion of the bottle pass with almost every section of the game.
+						Gone are the days of account level which was a simple achievement of
+						game experience that every player could proudly stand by to a
+						temporary tier system that resets every 60 days. There are no more
+						levels in Overwatch 2 and with that change the reward system for
+						players as well. In Overwatch 1, players are awarded for playing the
+						game with experience and levels every level the player completed
+						they received a loot box which would contain four randomized
+						cosmetics or currency to purchase a cosmetic of the player's
+						choosing. Now with the battle pass system when players do their
+						daily, weekly or even seasonal challenges and level up there may be
+						no reward at all if they didn't pay into the premium battle pass. It
+						is possible for players to level up their battle pass six times in a
+						row without receiving a reward. Overwatch one consistently rewarded
+						the player for playing the game and that system was replaced with
+						semi-unpredictable rewards.
+					</p>
+					<p>
+						If you catalog the battle pass you'll notice that the free rewards
+						are not evenly distributed throughout it. Instead sometimes players
+						will get their free reward and just two levels all the way up to
+						six. This is reminiscent of a deceptive design and psychological
+						phenomenon known as intermittent reinforcement. Intermittent
+						reinforcement refers to the delivery of a reward at irregular or
+						unpredictable intervals. Intermittent reinforcement encourages the
+						user to a specific desired task or behavior and a well-documented
+						example of this is gambling. The battle pass also employs other
+						psychological phenomena to encourage specific player behaviors and
+						one of the largest known ones for battle passes is the fear of
+						missing out. Players only have 60 days to complete all the tiers
+						before all the items that they could not unlock disappear. Cosmetics
+						and this battle pass are also set to never come back meaning if you
+						do not unlock it within the 60 days you will never unlock it in the
+						future. Players are encouraged to spend more time in the game due to
+						the fact they feel they will be missing out on The limited
+						cosmetics. The fear of missing out also encourages users to spend
+						money on the battle pass. As they advance through the tiers and
+						unlock the free cosmetics it also shows the premier awards they
+						could unlock if they spent money. It teases and tends the user by
+						dangling items they could have if they spend money. Despite all
+						these designs meant to encourage user spending and Overwatch 2
+						battle passes an issue on consumers rights.
+					</p>
+					<p>
+						There are a multitude of concerns when it comes to the battle pass
+						as a product. The battle pass is a non-refundable purchase, once you
+						buy it you cannot get your money back. The premium battle pass
+						advertises the sixty-two cosmetic items that you only unlock once
+						you complete that tier. It is possible for you to pay for the
+						premium pass and not get every item in the battle pass if you do not
+						complete all the tiers within the 60-day timeline. It is possible
+						for you to pay for a product, not receive all the items in that
+						product and not get a refund. Consumers also cannot make an educated
+						choice on if they can complete the battle pass in a timely manner or
+						not. The amount of time it will take to reach all eighty tiers thus
+						getting all the items in the premium battle pass is not listed
+						anywhere. Users are unable to judge the time commitment the product
+						demands to fully utilize its money's worth. Overwatch's battle pass
+						uses deceptive designs to encourage more time in the game and to
+						spend money on the battle pass along with failing to give consumers
+						all the information they need to make an informed choice on the
+						product.
+					</p>
+
+					<h2>In-Game Store</h2>
+					<p>
+						Overwatch 2 offers an in-game store where players can purchase
+						cosmetics directly using a virtual currency. Compared to Overwatch
+						one it offers a limited selection with a few single option purchases
+						and a couple bundles. It is a rotating storefront with the items for
+						sale changing every 24 hours or every 7 days. To gain virtual
+						currency users must spend real world money. The graph below shows a
+						breakdown of the cost of the currency plus the price per point
+						ratio.
+					</p>
+					<img src="public/images/OW/ow2points.png" />
+					<p>
+						The game encourages users to make larger transactions to get a
+						better price per point ratio. It is a type of waste aversion where
+						players feel like they're not getting the best deal unless they
+						spend more money. The storefront incorporates many designs and
+						psychological effects to obfuscate the true value of the items and
+						make it difficult for users to evaluate their purchase. The virtual
+						currency attempts to obfuscate the true price of the items and
+						disconnect users from its real-world cost. Saying skin cost 1,900
+						Overwatch Points to buy does not have the same intrinsic meaning as
+						handing over $19 in cash. The store prices are also set up to always
+						leave the user with leftover Overwatch Points. This is done to
+						trigger the psychological tendency for waste aversion. By having
+						those points there, the player will feel that they are being wasted
+						despite them not being able to buy anything with it therefore are
+						encouraged to spend more money so those leftover points aren't
+						wasted. For example legendary skins are priced at 1900 Overwatch
+						Points beating users to purchase the $20 bundle which provides 2,200
+						points leaving 300 left over from the purchase. In fact almost every
+						purchase on the store will leave you with leftover currency. Below
+						you will find a graph with the cost of every item in Overwatch 2.
+					</p>
+					<img src="public/images/OW/ow2PointCost.png" />
+					<p>
+						Note that there are only three items that you can buy without any
+						leftover currency out of the ten possible categories. These designs
+						make it difficult for the players to effectively evaluate the
+						product's value to them and our practices that would not be accepted
+						outside of the digital format. It would be like a pizza parlor
+						selling two slices of pizza for $4 but you can only hand them $5
+						bills. The end result is you paying $5 for those two slices of pizza
+						despite it being only advertised as $4 for two and the same effect
+						happens in Overwatch 2 storefront.
+					</p>
+					<p>
+						When Overwatch switched to its free-to-play model and included
+						battle pass it also increased the pricing for all of its cosmetic
+						items. Below is the graph comparing Overwatch 1 prices to Overwatch
+						2 prices for different categories of items.
+					</p>
+					<img src="public/images/OW/ow2PointCostCompare.png" />
+					<p>
+						When compared to Overwatch 1, every item either doubled or tripled
+						in price without any distinctive justification. This pricing caused
+						a lot of outrage among his player base and made users question the
+						true value of what they are selling. A user on Reddit named
+						RevJoyStick “calculated how much it would cost to buy every item”
+						they own from Overwatch 1 into Overwatch 2 store prices excluding
+						sprays. According to their visual graph the cosmetics in their
+						account are supposedly valued at over $10,000 at Overwatch’s
+						pricing.
+					</p>
+					<p>
+						The game does not reveal the amount of money it is possible to spend
+						on my cosmetics when players start playing the game. Let us say a
+						player wanted one legendary skin for all of their characters. There
+						are thirty-six characters in Overwatch 2 and legendary skins cost
+						$19. That would come to a total price point of 684 dollars just to
+						have one skin for every character. It is possible to earn Overwatch
+						Points through in-game mechanics but it is at a glacially slow-pace.
+						The player can earn up to 60 Overwatch points per week by completing
+						all the weekly challenges. It would take a player 9 weeks of
+						continually completing all the weekly challenges to afford one
+						legendary skin in Overwatch 2 from the storefront.
+					</p>
+					<p>
+						Outside of pricing, Overwatch to storefront encourages user spending
+						similarly like the battle pass by invoking the fear of missing out.
+						Its store selection is extremely limited, only offering up to a
+						bundle or items at a time half of which are on a rotating timer.
+						Every 24 hours four items change to something completely different.
+						It is the same monetization method that Fortnite uses for its door
+						front and has found massive success with it. Because users never
+						know when those items will appear in the store again, if they see
+						something they like they are pushed to purchase it for the fear of
+						never seeing it again. It creates a level of artificial scarcity for
+						the cosmetic items despite its easily reproducible digital format.
+					</p>
+					<h2>Conclusion</h2>
+					<p>
+						Overwatch 2 fails to provide all the information needed for
+						consumers to make informed decisions on its in-game purchases. In
+						addition, it incorporates deceptive designs to purposely obfuscate
+						the value of its items and pushes users to spend more money using
+						behavioral game design in its store front and battle pass system.
+						Its battle pass poses an issue for consumers right to a product they
+						purchase by having a built in expiration date meaning that players
+						can purchase the $10 USD premium battle pass without receiving all
+						its products with no available refund. In addition to having the
+						cosmetic store and the battle pass, Activision-Blizzard nearly
+						doubled the price of all the cosmetic items in their store, over
+						inflating their value and allowing users to spend hundreds, if not
+						thousands of dollars on their store with no limits or warnings in
+						place. Despite the fun team-based gameplay and the wonderful people
+						you can meet through its custom game modes, I would recommend
+						refraining from spending any money on Overwatch 2 until these issues
+						are addressed.
+					</p>
+				</article>
+			</div>
+
+			<footer></footer>
+		</div>
+	</body>
+</html>
